@@ -1,0 +1,8 @@
+<body>
+<form class="content__form" action="telegram.php" method="POST" enctype="multipart/form-data">
+    <textarea name="text1"  type="text" class="content__answer"></textarea>
+		<input name="file1" type="file" multiple class="content__file">
+    <!--this areas repeats-->
+    <!--13txt textareas and 7 files inputs-->
+</body>
+
