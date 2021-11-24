@@ -62,8 +62,8 @@ $filename7 = $_FILES["file7"]["name"];
 
 
 
-$token = "2100718471:AAENv3QPC1xftr_VWWbt33yMRDCVojtK-fk";
-$chat_id = "-1001623574868";
+$token = "***";
+$chat_id = "****";
 $arr = array(
 
   '1 вопрос: ' => $text1,
