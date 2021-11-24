@@ -1,0 +1,103 @@
+<?php
+
+
+$text1 = $_POST['text1'];
+$text2 = $_POST['text2'];
+$text3 = $_POST['text3'];
+$text4 = $_POST['text4'];
+$text5 = $_POST['text5'];
+$text6 = $_POST['text6'];
+$text7 = $_POST['text7'];
+$text8 = $_POST['text8'];
+$text9 = $_POST['text9'];
+$text10 = $_POST['text10'];
+$text11= $_POST['text11'];
+$text12 = $_POST['text12'];
+$text13 = $_POST['text13'];
+
+
+
+
+$uploadfile1 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file1']['name']));
+    if (move_uploaded_file($_FILES['file1']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile2 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file2']['name']));
+    if (move_uploaded_file($_FILES['file2']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile3 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file3']['name']));
+    if (move_uploaded_file($_FILES['file3']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile4 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file4']['name']));
+    if (move_uploaded_file($_FILES['file4']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile5 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file5']['name']));
+    if (move_uploaded_file($_FILES['file5']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile6 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file6']['name']));
+    if (move_uploaded_file($_FILES['file6']['tmp_name'], $uploadfile)) 
+    {
+}    
+$uploadfile7 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file7']['name']));
+    if (move_uploaded_file($_FILES['file7']['tmp_name'], $uploadfile)) 
+    {
+}    
+
+
+$filename1 = $_FILES["file1"]["name"]; // add this line of code to auto pick the file name
+//$mail->addAttachment($uploadfile, 'My uploaded file'); use the one below instead
+
+$filename2 = $_FILES["file2"]["name"];
+$filename3 = $_FILES["file3"]["name"];
+$filename4 = $_FILES["file4"]["name"];
+$filename5 = $_FILES["file5"]["name"];
+$filename6 = $_FILES["file6"]["name"];
+$filename7 = $_FILES["file7"]["name"];
+
+
+
+
+
+$token = "2100718471:AAENv3QPC1xftr_VWWbt33yMRDCVojtK-fk";
+$chat_id = "-1001623574868";
+$arr = array(
+
+  '1 вопрос: ' => $text1,
+  '2 вопрос: ' => $text2,
+  '3 вопрос: ' => $text3,
+  '4 вопрос: ' => $text4,
+  '5 вопрос: ' => $text5,
+  '6 вопрос: ' => $text6,
+  '7 вопрос: ' => $text7,
+  '8 вопрос: ' => $text8,
+  '9 вопрос: ' => $text9,
+  '10 вопрос: ' => $text10,
+  '11 вопрос: ' => $text11,
+  '12 вопрос: ' => $text12,
+  '13 вопрос: ' => $text13, 
+  'Фотография 1: ' => $filename1,
+  'Фотография 2: ' => $filename2,
+  'Фотография 3: ' => $filename3,
+  'Фотография 4: ' => $filename4,
+  'Фотография 5: ' => $filename5,
+  'Фотография 6: ' => $filename6,
+  'Фотография 7: ' => $filename7,
+);
+
+
+
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+
+
+
+if ($sendToTelegram) {
+  header('Location: index.html');
+} else {
+  echo "Error";
+}
+?>
+
